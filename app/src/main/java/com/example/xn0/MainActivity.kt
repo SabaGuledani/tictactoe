@@ -57,6 +57,12 @@ class MainActivity : AppCompatActivity() {
     fun ChocolateDisco(clickedview: View) {
 
         if (clickedview is Button) {
+            if (player1score==5 ){
+                Toast.makeText(this, "final winner slay:first player", Toast.LENGTH_LONG).show()
+
+            }else if(player2score==5){
+                Toast.makeText(this, "final winner slay:second player", Toast.LENGTH_LONG).show()
+            }else{
             if (winnerPlayer == 1 || winnerPlayer == 2 || winnerPlayer==3) {
                 player1.clear()
                 player2.clear()
@@ -105,6 +111,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         winner()
+        }
     }
 
     var player1score = 0
@@ -174,6 +181,8 @@ class MainActivity : AppCompatActivity() {
             winnerPlayer = 0
             player1score = 0
             player2score = 0
+            p1score.text = player1score.toString()
+            p2score.text = player2score.toString()
             times = 0
             clear()
         }
